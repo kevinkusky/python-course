@@ -25,11 +25,11 @@ This is a simple script to practice creating a few functions in Python
 Please follow the steps outlined below.
 """
 
-# # STEP 1 - Write a function named `welcome` that prints a welcome message
+# STEP 1 - Write a function named `welcome` that prints a welcome message
 
 
-# def welcome():
-#     print("welcome, ya'll")
+def welcome():
+    print("welcome, ya'll")
 
 
 # # Step 2 - Write a function named `calc_sum` that
@@ -37,8 +37,8 @@ Please follow the steps outlined below.
 # #   - returns their sum
 
 
-# def calc_sum(n1, n2):
-#     return n1 + n2
+def calc_sum(n1, n2):
+    return n1 + n2
 
 
 # # DO NOT EDIT - The guts of the program
@@ -50,3 +50,58 @@ Please follow the steps outlined below.
 # print(
 #     calc_sum([1, 2], [3, 4]), "is [1,2,3,4]?", calc_sum([1, 2], [3, 4]) == [1, 2, 3, 4]
 # )
+
+# Define your function "addition" here
+
+
+def addition(n1, n2):
+    return n1 + n2
+
+
+# print(addition(2, 3))  # > 5
+# print(addition(-3, -6))  # > -9
+# print(addition(7, 3))  # > 10
+
+# Write your function, here.
+# Parameters are in this order: chickens, cows, pigs
+
+
+def how_many_legs(ch, cow, pig):
+    return (ch * 2) + 4 * (cow + pig)
+
+
+# print(how_many_legs(2, 3, 5))  # > 36
+# print(how_many_legs(1, 2, 3))  # > 22
+# print(how_many_legs(5, 2, 8))  # > 50
+
+
+def string_int(str):
+    return int(str)
+
+
+# print(string_int("6"))  # > 6
+# print(string_int("1000"))  # > 1000
+# print(string_int("12"))  # > 12
+
+# Write your function, here.
+
+
+def calculate_exponent(b, e):
+    return b ** e
+
+
+# print(calculate_exponent(5, 5))  # > 3125
+# print(calculate_exponent(10, 10))  # > 10000000000
+# print(calculate_exponent(3, 3))  # > 27
+
+# Write your function, here.
+
+
+def And(test1, test2):
+    return test1 and test2
+
+
+# print(And(True, False))  # > False
+# print(And(True, True))  # > True
+# print(And(False, True))  # > False
+# print(And(False, False))  # > False
