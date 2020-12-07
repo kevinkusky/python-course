@@ -140,3 +140,98 @@ def cap_space(str):
 # print(cap_space("helloWorld"))  # > "hello world"
 # print(cap_space("iLoveMyTeapot"))  # > "i love my teapot"
 # print(cap_space("stayIndoors"))  # > "stay indoors"
+
+
+# Write your function, here.
+
+
+def concat_name(fname, lname):
+    return f"{lname}, {fname}"
+
+
+# print(concat_name("First", "Last"))  # > "Last, First"
+# print(concat_name("John", "Doe"))  # > "Doe, John"
+# print(concat_name("Mary", "Jane"))  # > "Jane, Mary"
+
+# Write your function, here.
+
+
+def char_count(char, string):
+    return string.count(char)
+
+
+# print(char_count("a", "App Academy"))  # > 1
+# print(char_count("c", "Chamber of Secrets"))  # > 1
+# print(char_count("b", "big fat bubble"))  # > 4
+
+
+def factorial(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+# print(factorial(1))  # > 1
+# print(factorial(8))  # > 40320
+# print(factorial(12))  # > 479001600
+
+
+def divisible_by_five(num):
+    return num % 5 == 0
+
+
+# print(divisible_by_five(5))  # > True
+# print(divisible_by_five(-55))  # > True
+# print(divisible_by_five(37))  # > False
+
+
+def is_last_char_n(string):
+    return string.endswith("n")
+
+
+# print(is_last_char_n("Aiden"))  # > True
+# print(is_last_char_n("Piet"))  # > False
+# print(is_last_char_n("Bert"))  # > False
+# print(is_last_char_n("Dean"))  # > True
+
+
+def compare_str(str1, str2):
+    return len(str1) == len(str2)
+
+
+# print(compare_str("AB", "CD"))  # > True
+# print(compare_str("ABC", "DE"))  # > False
+# print(compare_str("hello", "App Academy"))  # > False
+
+
+def is_valid_hex(color):
+    if color[0] != "#" or len(color) != 7:
+        return False
+
+    color_chars = list("abcdef0123456789")
+    for char in color[1:].lower():
+        if char not in color_chars:
+            return False
+    return True
+
+
+# print(is_valid_hex("#CD5C5C")) #> True
+# print(is_valid_hex("#EAECEE")) #> True
+# print(is_valid_hex("#eaecee")) #> True
+
+# print(is_valid_hex("#CD5C58C"))
+# # Prints False
+# # Length exceeds 6
+
+# print(is_valid_hex("#CD5C5Z"))
+# # Prints False
+# # Not all alphabetic characters in A-F
+
+# print(is_valid_hex("#CD5C&C"))
+# # Prints false
+# # Contains unacceptable character
+
+# print(is_valid_hex("CD5C5C"))
+# # Prints False
+# # Missing #
