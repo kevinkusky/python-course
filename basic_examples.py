@@ -105,3 +105,38 @@ def And(test1, test2):
 # print(And(True, True))  # > True
 # print(And(False, True))  # > False
 # print(And(False, False))  # > False
+
+# Write your function, here.
+
+
+def long_burp(length):
+    r_train = "r" * length
+    return f"Bu{r_train}p"
+
+
+# print(long_burp(3))  # > "Burrrp"
+# print(long_burp(5))  # > "Burrrrrp"
+# print(long_burp(9))  # > "Burrrrrrrrrp"
+
+
+# Write your function, here.
+
+
+def cap_space(str):
+    length = len(str)
+    i = 0
+    formatted = ""
+
+    while i < length:
+        if str[i].isupper():
+            formatted += f" {str[i]}"
+        else:
+            formatted += str[i]
+        i += 1
+
+    return formatted
+
+
+# print(cap_space("helloWorld"))  # > "hello world"
+# print(cap_space("iLoveMyTeapot"))  # > "i love my teapot"
+# print(cap_space("stayIndoors"))  # > "stay indoors"
