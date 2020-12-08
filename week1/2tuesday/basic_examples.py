@@ -234,4 +234,4 @@ def is_valid_hex(color):
 
 # print(is_valid_hex("CD5C5C"))
 # # Prints False
-# # Missing #
+# # Missing '#'
