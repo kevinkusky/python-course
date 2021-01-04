@@ -109,3 +109,28 @@ print(max_difference([-3, 4, -9, -1, -2, 15]))
 
 print(max_difference([4, 17, 12, 2, 10, 2]))
 # 17 - 2 = 15
+
+# Write your function, here.
+
+def first_last(oldList):
+  return [oldList[0], oldList[-1]]
+
+
+print(first_last([5, 10, 15, 20, 25]))            #> [5, 25]
+print(first_last([13, None, False, True]))        #> [13, True]
+print(first_last([None, 4, "6", "hello", None]))  #> [None, None]
+
+# Write your function, here.
+
+def find_digit_amount(num):
+  abs = len(str(num))
+  if num < 1:
+    abs -= 1
+  return abs
+
+
+print(find_digit_amount(123))           #> 3
+print(find_digit_amount(-56))           #> 2
+print(find_digit_amount(7154))          #> 4
+print(find_digit_amount(61217311514))   #> 11
+print(find_digit_amount(0))             #> 1
