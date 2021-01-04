@@ -54,3 +54,58 @@ print(f"1 in d1? {1 in d1}")
 print(f"'1' in d1? {'1' in d1}")
 print(f"'one' in d1? {'one' in d1}")
 print(f"True in d1? {True in d1}")
+
+
+# Write your function, here.
+
+def has_key(di, key):
+  return key in di
+
+
+print(has_key({ "a": 44, "b": 45, "c": 46 }, "d"))
+# False
+
+print(has_key({ "craves": True, "midnight": True, "snack": True }, "morning"))
+# False
+
+print(has_key({ "pot": 1, "tot": 2, "not": 3 }, "not"))
+# True
+
+# Write your function, here.
+
+
+def find_smallest_num(nums):
+  return min(nums)
+
+
+print(find_smallest_num([34, 15, 88, 2]))                   #> 2
+print(find_smallest_num([34, -345, -1, 100]))               #> -345
+print(find_smallest_num([-76, 1.345, 1, 0]))                #> -76
+print(find_smallest_num([0.4356, 0.8795, 0.5435, -0.9999])) #> -0.9999
+print(find_smallest_num([7, 7, 7]))                         #> 7
+
+
+# Write your function, here.
+
+
+def is_empty(di):
+  return not di
+
+
+print(is_empty({}))        #> True
+print(is_empty({"a": 1}))  #> False
+
+
+# Write your function, here.
+
+def max_difference(nums):
+  return max(nums) - min(nums)
+
+print(max_difference([10, 15, 20, 2, 10, 6]))
+# 20 - 2 = 18
+
+print(max_difference([-3, 4, -9, -1, -2, 15]))
+# 15 - (-9) = 24
+
+print(max_difference([4, 17, 12, 2, 10, 2]))
+# 17 - 2 = 15
