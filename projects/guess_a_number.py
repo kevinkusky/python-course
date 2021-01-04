@@ -13,7 +13,6 @@ while current_guesses < 6:
     guess = int(input('Take a guess?'))
     current_guesses += 1
     if guess == game_number:
-        
         break
     elif guess < game_number:
         print(f'Your guess of {guess} was too low.')
