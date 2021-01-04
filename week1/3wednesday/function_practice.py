@@ -71,3 +71,26 @@ def greeting(name):
 print(greeting("Kurt"))   #> "Hi! I'm Kurt from Germany."
 print(greeting("Sam"))    #> "Hi! I'm Sam from Argentina."
 print(greeting("Monty"))  #> "Hi! I'm a guest."
+
+
+# Write your function, here.
+
+def track_robot(directions):
+  coords = {'left': 0, 'right': 0, 'up': 0, 'down': 0}
+  
+  for step in directions:
+    step = step.split()
+    coords[step[0]] += int(step[1])
+  
+  return [coords['right'] - coords['left'], coords['up'] - coords['down']]
+    
+
+print(track_robot(["right 10", "up 50", "left 30", "down 10"]))
+# Prints [-20, 40]
+
+print(track_robot([]))
+# Prints [0, 0]
+# If there are no instructions, the robot doesn't move.
+
+print(track_robot(["right 100", "right 100", "up 500", "up 10000"]))
+# Prints [200, 10500]
