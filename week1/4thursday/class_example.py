@@ -1,4 +1,4 @@
-
+# Not very pythony class - see below notes for changes
 
 class Invoice:
     def __init__(self, number):
@@ -7,6 +7,14 @@ class Invoice:
 
     def add_item(self, item):
         self._items.append(item)
+
+    def total(self):
+        t = 0
+        # map items to totals and return sum
+        # with list comprehention
+        for item in self._items:
+            t += item.total()
+        return t
 
 
 class FeeItem:
@@ -30,3 +38,6 @@ class ExpenseItem:
 invoice = Invoice('A1234B')
 fee = FeeItem(100, 1.5, 'Phone Conversation')
 expense = ExpenseItem(200, 'Copies')
+
+invoice.add_item(fee)
+invoice.add_item(expense)
