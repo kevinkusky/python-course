@@ -10,8 +10,8 @@ class Invoice:
 
     def total(self):
         t = 0
-        # map items to totals and return sum
-        # with list comprehention
+        # map items to totals and return sum of new list
+        # with list comprehention to be more pythony
         for item in self._items:
             t += item.total()
         return t
@@ -23,6 +23,7 @@ class FeeItem:
         self._amount = amount
         self._description = description
 
+    # method call rather than property of instance
     def total(self):
         return self._rate * self._amount
 
@@ -41,3 +42,10 @@ expense = ExpenseItem(200, 'Copies')
 
 invoice.add_item(fee)
 invoice.add_item(expense)
+
+
+# total methods called as methods
+print(invoice)
+print(fee.total())
+print(expense.total())
+print(invoice.total())

@@ -1,7 +1,11 @@
 # More Python-y class
 
 class Invoice:
+    # slots property optimization
+    # list of instance variables as strings
+    __slots__ = ['_numbers', '_items']
     def __init__(self, number):
+        # underscore treats property as private
         self._number = number
         self._items = []
 
@@ -25,17 +29,25 @@ class Invoice:
     def total(self):
         return sum([item.total for item in self._items])
 
+    def __repr__(self):
+        # python formatting 
+        # :.2f - float and sig figs
+        return f"<Invoice {self._number} ${self.total:.2f}>"
+
 
 # new class for inheritence - classes share amount and description
 class LineItem:
+    __slots__ = ['_amount', '_description']
     def __init__(self, amount, description):
         self._amount =  amount
         self._description =  description
 
 
 class FeeItem(LineItem):
+    __slots__ = ['_rate']
     def __init__(self, rate, amount, description):
         # super with init to inerhit
+        # super binds 'self' to methods of inherited class
         super().__init__(amount, description)
         self._rate = rate
 
@@ -59,3 +71,11 @@ expense = ExpenseItem(200, 'Copies')
 
 invoice.add_item(fee)
 invoice.add_item(expense)
+
+print(invoice.total)
+
+print(invoice.number)
+invoice.number ='banana5'
+print(invoice.number)
+
+print(invoice)  
