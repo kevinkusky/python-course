@@ -1,3 +1,20 @@
+# Formatting Strings
+name = input("What is your name?\n")
+
+# concat
+print("Hi, " + name + ".")
+
+# %s - indicated output is string
+# % name - value to be outputted
+print("Hi, %s." % name)
+
+# {0} - order of variables into format
+# 0 indexed - mult {0} {1} {2} ...  
+print("Hi, {0}.".format(name))
+
+# Python formatted string
+print(f'Hi, {name}.')
+
 # print("** Doubling Penny **")
 
 # # How many times would a penny need to double to generate a million dollars?
@@ -66,8 +83,8 @@ def addition(n1, n2):
 # Parameters are in this order: chickens, cows, pigs
 
 
-def how_many_legs(ch, cow, pig):
-    return (ch * 2) + 4 * (cow + pig)
+def how_many_legs(chk, cow, pig):
+    return (chk * 2) + 4 * (cow + pig)
 
 
 # print(how_many_legs(2, 3, 5))  # > 36
