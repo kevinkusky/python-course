@@ -35,3 +35,16 @@ powers_of(exp=4, b=9)
 
 # Common Python way of invoking a function known to have a defualt value for readability
 powers_of(2, exp=10)
+
+
+# Function Argument Structure
+# ********************************************
+# 1 - Formal positional arguments
+# 2 - *args
+# 3 - keyword arguments with default values
+# 4 - **kwargs
+# ********************************************
+
+def example(a1, a2, *args, kw1='shark', **kwargs):
+    pass
+
