@@ -1,7 +1,7 @@
 # About
 # Mutable, Ordered, Iterable
 # 
-# created via [] or 
+# created via [] or list()
 
 # ********************************
 # Indexing
