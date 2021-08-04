@@ -2,11 +2,10 @@
 # Mutable, Ordered, Iterable
 # 
 # created via [] or 
-# 
 
-
-
+# ********************************
 # Indexing
+# ********************************
 friends = ['Kevin', 'Morgan', 'James', 'Anthony', 'Carly', 'Cassidy']
 
 # 0 indexed from start
@@ -36,14 +35,19 @@ print(friends[::2]) # ['Kevin', 'James', 'Carly']
 # With the same step and different start, the return alters
 print(friends[1::2]) # ['Morgan', 'Anthony', 'Cassidy']
 
-
+# ********************************
 # Opperations
+# ********************************
 supplies = ['lighter', 'Water', 'Guitar', 'steel drum', 'pocket knife', 'compass']
 
+# ********************************
 # Determine length
+# ********************************
 print(len(supplies)) 
 
+# ********************************
 # Add list item/ Remove list item
+# ********************************
 # List as is
 print(supplies)
 
@@ -55,7 +59,9 @@ print(supplies)
 supplies.remove('steel drum')
 print(supplies)
 
+# ********************************
 # Sort List
+# ********************************
 # Note: Python treats capital and lower case as different values when sorting
 supplies.sort()
 print(supplies)
@@ -68,7 +74,7 @@ supplies.sort(key=str.lower)
 print(supplies)
 
 
-# Make sorted copies without altering original
+# Make sorted copies without altering original - sorted() function
 colors = ['red', 'yellow', 'green', 'blue', 'orange']
 alpha_colors = sorted(colors)
 
@@ -88,3 +94,21 @@ reverse_alpha_2 = reversed(alpha_colors)
 print(list(reverse_standard))
 print(list(reverse_alpha_2))
 
+
+# ********************************
+# Math with Lists
+# ********************************
+
+scores = [100, 90, 50, 70, 88, 93]
+
+# sum() function to add list items
+totalScore = sum(scores)
+
+# max() function pulls highest value
+highScore = max(scores)
+
+# min() function pulls smallest value
+highScore = min(scores)
+
+# no function for average - utilize len and sum
+avgScore = sum(scores)/len(scores)
