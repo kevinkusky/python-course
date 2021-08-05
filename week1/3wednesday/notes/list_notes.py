@@ -1,11 +1,11 @@
 # About
 # Mutable, Ordered, Iterable
-# 
+
 # created via [] or list()
 
-# ********************************
+# ********************************************
 # Indexing
-# ********************************
+# ********************************************
 friends = ['Kevin', 'Morgan', 'James', 'Anthony', 'Carly', 'Cassidy']
 
 # 0 indexed from start
@@ -15,12 +15,13 @@ print(friends[2]) # 3rd from start name - James
 print(friends[-2]) # Second to last listed name - Carly
 
 # Pull a range of listed items via : indicies
-# *******************************************
+# *********************************************
 # Important Notes
 #  - second index value is not included in return
-#  - do not need to enter values if you want to inclue everything
+#  - do not need to enter values 
+#      if you want to inclue everything
 #  - optional 3rd index value for step considerations
-# *******************************************
+# *********************************************
 
 # All but first and last
 print(friends[1:-1]) # ['Morgan', 'James', 'Anthony', 'Carly']
@@ -35,19 +36,19 @@ print(friends[::2]) # ['Kevin', 'James', 'Carly']
 # With the same step and different start, the return alters
 print(friends[1::2]) # ['Morgan', 'Anthony', 'Cassidy']
 
-# ********************************
+# *********************************************
 # Opperations
-# ********************************
+# *********************************************
 supplies = ['lighter', 'Water', 'Guitar', 'steel drum', 'pocket knife', 'compass']
 
-# ********************************
+# *********************************************
 # Determine length
-# ********************************
+# *********************************************
 print(len(supplies)) 
 
-# ********************************
+# *********************************************
 # Add list item/ Remove list item
-# ********************************
+# *********************************************
 # List as is
 print(supplies)
 
@@ -59,10 +60,12 @@ print(supplies)
 supplies.remove('steel drum')
 print(supplies)
 
-# ********************************
+# **********************************************
 # Sort List
-# ********************************
-# Note: Python treats capital and lower case as different values when sorting
+# **********************************************
+
+# Note!!!
+# Python treats capital and lower case as different values when sorting
 supplies.sort()
 print(supplies)
 
@@ -95,9 +98,9 @@ print(list(reverse_standard))
 print(list(reverse_alpha_2))
 
 
-# ********************************
+# *********************************************
 # Math with Lists
-# ********************************
+# *********************************************
 
 scores = [100, 90, 50, 70, 88, 93]
 
