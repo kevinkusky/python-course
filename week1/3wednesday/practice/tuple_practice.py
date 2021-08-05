@@ -26,7 +26,7 @@ print(int(sum(evens)/len(evens)))
 
 
 def minmaxmean(iterable):
-  return {'min': min(iterable), 'max': max(iterable), 'avg': int(sum(evens)/len(evens))}
+  return {'min': min(iterable), 'max': max(iterable), 'avg': int(sum(iterable)/len(iterable))}
 
 
 

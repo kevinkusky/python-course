@@ -112,3 +112,7 @@ highScore = min(scores)
 
 # no function for average - utilize len and sum
 avgScore = sum(scores)/len(scores)
+
+# Alternatively you can roll your own avg() function
+# def avg(scores):
+#     return sum(scores) / len(scores) 

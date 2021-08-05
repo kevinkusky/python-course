@@ -13,6 +13,10 @@ def xor(param1, param2):
 xor2 = lambda p1, p2: p1 != p2
 
 
+print('xor: %s' %xor(1,20))
+print('xor2: %s' %xor2(1,20))
+
+
 # *******************************************
 # Default values and other cool function tips
 # *******************************************
