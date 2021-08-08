@@ -62,3 +62,37 @@ basket = ['apple', 'banana', 'orange', 'apple', 'apple', 'cheese', 'meat']
 
 # Flattens list as set
 print(set(basket)) # {'apple', 'banana', 'orange', 'meat', 'cheese'}
+
+# ***************************************************
+# Real world examples
+# Combining different Data Structures
+# ***************************************************
+purchaseEmails = ('bob101@aol.com', 'yojo1231@yahoo.com', 'morganstushy@aim.com', 'sam@yahoo.com')
+helpEmails = ('kevinsky@gmail.com', 'bob101@aol.com', 'sam@yahoo.com')
+
+# Utilizing Intercection
+print('Users making a purchase and also calling help desk')
+print(set(purchaseEmails) & set(helpEmails)) # {'bob101@aol.com', 'sam@yahoo.com'}
+
+
+posts = [
+    {'title': 'all about lists', 'tags': ('fun', 'informative', 'lists')},
+    {'title': 'Tuple Trouble', 'tags': ('fun', 'tuples')},
+    {'title': 'Sparkling Sets', 'tags': ('informative', 'numbers')},
+]
+
+
+# extend method adds multible items to a list
+allTags = []
+for i in range(len(posts)):
+    allTags.extend(posts[i]['tags'])
+
+# Typecast as set & removes duplicates
+# Since Sets are unsorted
+# Typecast as list again to sort data
+allTags = list(set(allTags))
+allTags.sort()
+
+# allTags now sorted and unique
+print(allTags)
+
