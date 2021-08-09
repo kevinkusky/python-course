@@ -44,10 +44,45 @@ print(any(feedback3), feedback3) # False
 
 # ***********************************************
 # Filter
+
+# filter(function, iterable)
+# 
+# 
 # ***********************************************
 
+scores = [90, 100, 69, 79, 85, 80, 50]
 
+def isA(grade):
+    return grade >= 90
+
+aScores = filter(isA, scores)
+
+
+# to read - must typecast
+print(list(aScores))
 
 # ***********************************************
 # Map
 # ***********************************************
+
+def getGrade(grade):
+    if (grade >= 90):
+        return 'A'
+    elif (grade < 90 and grade >= 80):
+        return 'B'
+    elif (grade < 80 and grade >= 70):
+        return 'C'
+    elif (grade < 70 and grade >= 60):
+        return 'D'
+    else:
+        return 'F'
+
+
+grades = list(map(getGrade, scores))
+
+print(grades)
+
+# Zipped grades and scores
+combined = list(zip(scores, grades))
+print(combined)
+
