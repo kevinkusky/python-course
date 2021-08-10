@@ -17,6 +17,12 @@
 #          - Convention is to add a prefix '_'
 #          - Rule of thumb, MOST Instance variables 
 #                   should be considered Non-Public
+#    - Decorators can be applied to methods, classes, and parameters
+#          - Always start with '@'
+#          - Types:
+#                - property: apply to a method to seem readable (getter)
+#                           - @method.setter will allow properties with getters 
+#                             defined to be writable (setters)                        
 # *************************************************
 
 class ExampleClass:
@@ -41,11 +47,27 @@ class ExampleClass:
     def move_y_by(self, delta):
         self._y += delta
 
-    def get_x(self):
+    # Defines 'getter' method for x variable
+    @property
+    def x(self):
         return self._x
 
-    def get_y(self):
+    # Relies on 'getter method' above to define 'setter'
+    @x.setter
+    def x(self, value):
+        if value < 0:
+            value = 0
+        self._x = value
+
+    @property
+    def y(self):
         return self._y
+
+    @y.setter
+    def y(self, value):
+        if value < 0:
+            value = 0
+        self._y = value
 
     # repr overides default output behavior of printing out instance of class
     # i.e
