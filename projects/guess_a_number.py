@@ -9,6 +9,8 @@ game_number = random.randint(1, 20)
 
 print(f'Well {name}, I am thinking of a number between 1 and 20!')
 
+# Allows up to 5 guesses
+# Loops until correct or out of guesses
 while current_guesses < 6:
     guess = int(input('Take a guess? '))
     current_guesses += 1
