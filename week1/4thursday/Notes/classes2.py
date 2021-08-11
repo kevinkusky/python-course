@@ -1,5 +1,3 @@
-# More Python-y class
-
 class Invoice:
     # slots property optimization
     # list of instance variables as strings
@@ -18,7 +16,7 @@ class Invoice:
     def number(self):
         return self._number
 
-    # @propertyName referse to the above named property
+    # @propertyName refers to the above named property
     # .setter allows same method name for getter and setter
     @number.setter
     def number(self, value):
