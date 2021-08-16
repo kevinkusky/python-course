@@ -20,6 +20,7 @@ class Invoice:
     # .setter allows same method name for getter and setter
     @number.setter
     def number(self, value):
+        # None protects from mallicious setting in this case
         if value is not None:
             self._number = value
 
