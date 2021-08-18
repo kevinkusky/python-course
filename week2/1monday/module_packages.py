@@ -1,6 +1,7 @@
 # *********************************************
 # Import statements in python
 
+# imports built in random module
 import random
 
 # How does python search?
