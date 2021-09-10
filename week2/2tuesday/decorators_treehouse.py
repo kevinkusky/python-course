@@ -74,7 +74,6 @@ def logMe(f):
     return inner
 
 # Without syntactic sugar
-
 def print_2():
     print(2)
 
@@ -107,7 +106,8 @@ def logMePart2(f):
         # without stars in format to print out tuple and dict respectively
         logging.debug("Called {} with args {} and kwargs {}".format(f.__name__, args, kwargs))
         return f(*args, **kwargs)
-    # Cleans up docs and names
+
+    # Manually cleans up docs and names
     # inner.__doc__ = f.__doc__
     # inner.__name__ = f.__name__
 
@@ -119,7 +119,5 @@ def sub(x, y, switch=False):
 
 sub(5,2)
 sub(5,2, switch=True)
-
-
 
 # **************************************************
