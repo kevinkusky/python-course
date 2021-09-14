@@ -7,4 +7,6 @@ app.config.from_object(Config)
 
 @app.route('/')
 def index():
-    return '<h1>Sample App</h1>'
+    # return '<h1>Sample App</h1>'
+    return """<h1>I am a header</h1>
+                <p>I am a paragraph</p>"""
