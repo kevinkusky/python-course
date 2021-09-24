@@ -17,9 +17,11 @@ def index():
     return render_template('page.html', title='Index')
 
 
-@bp.route('/login')
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/')
     return render_template('login.html', form=form)
 
 
