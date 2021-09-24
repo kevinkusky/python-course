@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect
-
+from app.forms.login import LoginForm
 
 bp = Blueprint('', __name__)
 
@@ -15,6 +15,12 @@ def index():
     # Template Return
     # render_template('template_title.html', var_name='var_value')
     return render_template('page.html', title='Index')
+
+
+@bp.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
 @bp.route('/help')

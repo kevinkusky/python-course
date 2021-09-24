@@ -8,4 +8,3 @@ app.config.from_object(Config)
 
 app.register_blueprint(routes.inventory.bp)
 app.register_blueprint(routes.main.bp)
-
