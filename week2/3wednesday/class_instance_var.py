@@ -1,8 +1,21 @@
 from datetime import date
 
 class Book:
+
+    # If You do not need to override shared class variables, 
+    # __slots__ will avoid accidental attribute name collisions
+    __slots__ = ['_title', '_series', '_author', '_checked_out_on']
+
+
     # Class variable - defined directly within a class
     loan_duration = 14 # days
+
+    # Can be set globally via declaration
+    # **** Book.loan_duration = 7
+    
+    # Attempting to set via instance will instead define a 
+    # new instance variable which shadows/hides the class variable of the same name
+    # **** fellowship_of_the_ring.loan_duration = 3  # // Book.loan_duration is still 7
 
     # Instance variables defined within __init__
     def __init__(self, title, series, author):
@@ -25,6 +38,25 @@ class Book:
             overdue = elapsed_days > self.loan_duration
 
         return overdue
+
+    # Class Method
+    # first argument, cls, PEP 8 convention much like the self argument
+    @classmethod
+    def create_series(cls, series, author, *args):
+        """
+        Factory class method creates a series of books.
+        """
+        return [ cls(title, series, author) for title in args ]
+
+    # Static method
+    @staticmethod
+    def get_titles(*args):
+        """
+        Static method accepts a variable number of Book instances
+        returning a list of their titles.
+        """
+        return [ book._title for book in args ]
+
 
     def __repr__(self):
         return f"{self._title} by {self._author}"
@@ -66,3 +98,23 @@ fellowship_of_the_ring.checkout(checked_out_on=date.fromisoformat("2020-04-04"))
 # Now fellowship returns as overdue
 print(fellowship_of_the_ring.is_overdue()) # True
 print(grapes_of_wrath.is_overdue()) # False
+
+# Utilizing class method
+# Call class method to create a series of books.
+lord_of_the_rings = Book.create_series(
+    "The Lord of the Rings",
+    "J.R.R. Tolkien",
+    "The Fellowship of the Ring",
+    "The Two Towers",
+    "The Return of the King"
+)
+
+print(lord_of_the_rings)
+# [The Fellowship of the Ring by J.R.R. Tolkien, The Two Towers by J.R.R. Tolkien, The Return of the King by J.R.R. Tolkien]
+
+# Unpack the lord_of_the_rings list into the individual books.
+fellowship_of_the_ring, two_towers, return_of_the_king = lord_of_the_rings
+
+print(fellowship_of_the_ring)  # The Fellowship of the Ring by J.R.R. Tolkien
+print(two_towers)  # The Two Towers by J.R.R. Tolkien
+print(return_of_the_king)  # The Return of the King by J.R.R. Tolkien
