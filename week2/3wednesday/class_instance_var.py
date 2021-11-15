@@ -40,8 +40,21 @@ grapes_of_wrath = Book(
     None,
     "John Steinbeck")
 
+# Access the `loan_duration` class variable
+# from the class instances.
 print(fellowship_of_the_ring)  # The Fellowship of the Ring by J.R.R. Tolkien
+print(fellowship_of_the_ring.loan_duration)  # 14
 print(grapes_of_wrath)  # The Grapes of Wrath by John Steinbeck
+print(grapes_of_wrath.loan_duration)  # 14
+
+# Now change the `loan_duration` class variable value
+# through the `Book` class.
+Book.loan_duration = 7
+
+# The new `loan_duration` class variable value
+# is available on each existing instance.
+print(fellowship_of_the_ring.loan_duration)  # 7
+print(grapes_of_wrath.loan_duration)  # 7
 
 # Neither book currently has a checkout date and thus False for overdue
 print(fellowship_of_the_ring.is_overdue()) # False
