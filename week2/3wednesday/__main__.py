@@ -25,6 +25,7 @@ class Card:
 		return 14 if aces_high and self._rank_name == "Ace" \
 			else self._rank_value
 
+	# static methods
 	@staticmethod
 	def max(*args, aces_high=False):
 		"""
@@ -32,7 +33,7 @@ class Card:
 		"""
 		return max(
 			args,
-			key=lambda card: card.adjusted_rank_value(aces_high=aces_high)
+			key = lambda card: card.adjusted_rank_value(aces_high = aces_high)
 		)
 
 Rank = namedtuple("Rank", "name value")
@@ -60,7 +61,7 @@ class Deck:
 	)
 
 	def __init__(self):
-		self._cards = [Card(suit, rank.name, rank.value)
+		self._cards = [ Card(suit, rank.name, rank.value)
 						for suit in self._SUITS
 						for rank in self._RANKS
 		]
@@ -71,9 +72,7 @@ class Deck:
 		Class method to create a deck with the specified cards removed.
 		"""
 		deck = cls()
-		deck._cards = [card for card in deck._cards
-						if card.rank_value not in args
-		]
+		deck._cards = [ card for card in deck._cards if card.rank_value not in args ]
 		return deck
 
 	@classmethod
@@ -81,7 +80,7 @@ class Deck:
 		"""
 		Class method to create a piquet deck.
 		"""
-		return cls.stripped_deck(2,3,4,5,6)
+		return cls.stripped_deck(2, 3, 4, 5, 6)
 
 	@property
 	def cards(self):
@@ -91,7 +90,7 @@ class Deck:
 # deck = Deck()
 # print(deck.cards)
 
-deck2 = Deck.stripped_deck(2,3,4,5,6)
+deck2 = Deck.stripped_deck(2, 3, 4, 5, 6)
 print(deck2.cards)
 
 deck3 = Deck.piquet_deck()
